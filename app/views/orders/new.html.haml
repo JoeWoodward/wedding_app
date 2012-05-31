@@ -1,0 +1,18 @@
+- title 'Sam and Jamie\'s Wedding'
+%h1 Place Your Order
+= form_for @order do |f|
+  - if @order.errors.any?
+    .error_messages
+      %h2
+        = pluralize(@order.errors.count, 'error')
+        prohibited this order from being saved:
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+  .hidden
+    = f.text_field :type
+  = f.fields_for :people do |builder|
+    = render 'person_fields', f: builder
+  = link_to_add_fields "Add Person", f, :people
+  .actions
+    = f.submit 'Save'

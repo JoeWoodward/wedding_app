@@ -1,0 +1,17 @@
+%fieldset
+  = f.label :first_name, '* First Name'
+  = f.text_field :first_name
+  = f.text_field :last_name
+  %br
+  = f.label :starter, '* Starter'
+  = f.text_field :starter
+  %br
+  = f.label :main_course, '* Main Course'
+  = f.text_field :main_course
+  %br
+  = f.label :desert, '* Desert'
+  = f.text_field :desert
+  %br
+  %label.checkbox
+    = f.hidden_field :_destroy
+    %span#destroy.pointer Remove Person
