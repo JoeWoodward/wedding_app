@@ -10,6 +10,7 @@ group :production do
   gem 'pg'
 end
 gem 'hirb'              # Better console formatting. Needs .hirbrc
+gem 'simple_form'
 
 gem 'capistrano'        # Deployment manager
 

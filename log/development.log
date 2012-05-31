@@ -1,0 +1,768 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:22:38 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.haml within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 79ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: - title 'Sam and Jamie\'s Wedding'
+    2: article
+    3:   %h1 
+  app/views/static_pages/home.html.haml:3
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.3ms)
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (1)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('1')
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePeople (2)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "starter" varchar(255), "main_course" varchar(255), "desert" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('2')
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("orders")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("people")[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:42:45 +0100
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 210ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: title):
+  app/controllers/static_pages_controller.rb:3:in `new'
+  app/controllers/static_pages_controller.rb:3:in `home'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:42:57 +0100
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 9ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: type):
+  app/controllers/static_pages_controller.rb:3:in `new'
+  app/controllers/static_pages_controller.rb:3:in `home'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (43.9ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:43:16 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.haml within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x007f92faf55f98>:0x007f92faf518a8>):
+    1: - title 'Sam and Jamie\'s Wedding'
+    2: %article
+    3:   %h1 Place Your Order
+    4:   = simple_form_for :order do
+    5:     = f.error_notification
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml___1665145855062433254_70134626156960'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:43:42 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.haml within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x007f92faf55f98>:0x007f92f9b21400>):
+    1: - title 'Sam and Jamie\'s Wedding'
+    2: %article
+    3:   %h1 Place Your Order
+    4:   = simple_form_for :order do
+    5:     = f.error_notification
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml___1665145855062433254_70134626156960'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:45:20 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.haml within layouts/application (476.9ms)
+Completed 500 Internal Server Error in 732ms
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fa158daddf0>:0x007fa158d73970>):
+    2: %article
+    3:   %h1 Place Your Order
+    4:   = simple_form_for :order do
+    5:     = f.error_notification
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+    8:     .control-group
+  app/views/static_pages/home.html.haml:5:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513944720'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513944720'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (41.7ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (63.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:45:48 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.haml within layouts/application (45.3ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (Missing partial static_pages/people, application/people with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/Users/JoeWoodward/Sites/sam_and_jamie_wedding/app/views"
+):
+    4:   = simple_form_for :order do |f|
+    5:     = f.error_notification
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+  app/views/static_pages/home.html.haml:7:in `block (2 levels) in _app_views_static_pages_home_html_haml__4551562116121089369_70165513954120'
+  app/views/static_pages/home.html.haml:6:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513954120'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513954120'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:51:35 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (8.1ms)
+  Rendered static_pages/home.html.haml within layouts/application (46.1ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (undefined method `add_child_link' for #<#<Class:0x007fa158daddf0>:0x007fa158cef378>):
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:9:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513954120'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513954120'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 12:52:24 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (54.5ms)
+  Rendered static_pages/home.html.haml within layouts/application (63.0ms)
+Compiled application.css  (3521ms)  (pid 31182)
+  Rendered layouts/_stylesheets.html.haml (3554.9ms)
+Compiled respond.js  (0ms)  (pid 31182)
+  Rendered layouts/_head.html.haml (3596.6ms)
+  Rendered layouts/_header.html.haml (1.2ms)
+  Rendered layouts/_flashes.html.haml (2.2ms)
+  Rendered layouts/_footer.html.haml (1.2ms)
+Compiled jquery.js  (59ms)  (pid 31182)
+Compiled jquery_ujs.js  (0ms)  (pid 31182)
+Compiled jquery.hashgrid.js  (0ms)  (pid 31182)
+Compiled main.js  (1ms)  (pid 31182)
+Compiled application.js  (156ms)  (pid 31182)
+  Rendered layouts/_javascripts.html.haml (250.2ms)
+Completed 200 OK in 3953ms (Views: 3952.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /application.css - 200 OK (15ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /respond.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /jquery.js - 200 OK (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.hashgrid.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /jquery.hashgrid.js - 200 OK (6ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /main.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-31 12:52:28 +0100
+Served asset /application.js - 200 OK (17ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:04:57 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (7.1ms)
+  Rendered static_pages/home.html.haml within layouts/application (11.3ms)
+  Rendered layouts/_stylesheets.html.haml (1.9ms)
+  Rendered layouts/_head.html.haml (3.8ms)
+  Rendered layouts/_header.html.haml (0.1ms)
+  Rendered layouts/_flashes.html.haml (0.1ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+  Rendered layouts/_javascripts.html.haml (3.0ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (2.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (53.4ms)
+  Rendered layouts/_stylesheets.html.haml (2.1ms)
+  Rendered layouts/_head.html.haml (3.9ms)
+  Rendered layouts/_header.html.haml (0.1ms)
+  Rendered layouts/_flashes.html.haml (0.1ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Compiled jQuery.people.js  (0ms)  (pid 31182)
+Compiled application.js  (74ms)  (pid 31182)
+  Rendered layouts/_javascripts.html.haml (139.1ms)
+Completed 200 OK in 204ms (Views: 203.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jQuery.people.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /jQuery.people.js - 200 OK (2ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /main.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.hashgrid.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /jquery.hashgrid.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-31 13:07:23 +0100
+Served asset /application.js - 304 Not Modified (131ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:07:35 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (2.9ms)
+  Rendered static_pages/home.html.haml within layouts/application (62.1ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `add_child_link' for #<#<Class:0x007fa158daddf0>:0x007fa15d2b1ff0>):
+    6:     = f.simple_fields_for :people, @people do |builder|
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:9:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.6ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:08:32 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (2.8ms)
+  Rendered static_pages/home.html.haml within layouts/application (122.3ms)
+Completed 500 Internal Server Error in 138ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d0852e0>:0x007fa15d0825b8>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.9ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:08:37 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (3.0ms)
+  Rendered static_pages/home.html.haml within layouts/application (55.0ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d0852e0>:0x007fa15d240e90>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.1ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2012-05-31 13:10:07 +0100
+Processing by StaticPagesController#home as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGmZ3bqXkvT9wgnfsG651PAn7dzSH04GvnyqoJcrI/o=", "order"=>{"people"=>{"first_name"=>"asdfasdf", "last_name"=>"", "starter"=>"", "main_course"=>"", "desert"=>"", "_destroy"=>""}}, "commit"=>"Save"}
+  Rendered static_pages/_people.html.haml (2.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (72.8ms)
+Completed 500 Internal Server Error in 135ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d2c8ed0>:0x007fa15d2c61f8>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.1ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:11:49 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.9ms)
+  Rendered static_pages/home.html.haml within layouts/application (48.5ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d2c8ed0>:0x007fa15d1dabe0>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514782100'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (63.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:12:25 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.8ms)
+  Rendered static_pages/home.html.haml within layouts/application (44.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d2c8ed0>:0x007fa15d2dab08>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       -# .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514865240'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514865240'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:12:34 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.8ms)
+  Rendered static_pages/home.html.haml within layouts/application (123.6ms)
+Completed 500 Internal Server Error in 130ms
+
+ActionView::Template::Error (undefined method `new_child_field_template' for #<#<Class:0x007fa15d2c8ed0>:0x007fa15d1d0c58>):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514321220'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514321220'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:12:54 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.9ms)
+  Rendered static_pages/home.html.haml within layouts/application (67.7ms)
+Completed 500 Internal Server Error in 71ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_fields_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/static_pages_helper.rb:3:in `new_child_fields_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513608140'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513608140'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:13:29 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.6ms)
+  Rendered static_pages/home.html.haml within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.1ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:13:31 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (71.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (83.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:17:38 +0100
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 242ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: order_id):
+  app/controllers/static_pages_controller.rb:4:in `home'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateOrders (1)
+Migrating to CreatePeople (2)
+Migrating to AddOrderIdToPeople (3)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (26.7ms)[0m  ALTER TABLE "people" ADD "order_id" integer
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('3')[0m
+  [1m[35m (21.4ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("orders")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("people")
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:18:39 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.6ms)
+  Rendered static_pages/home.html.haml within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:18:45 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (52.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (57.1ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514218620'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:19:14 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (3.0ms)
+  Rendered static_pages/home.html.haml within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, @person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514613900'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514613900'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.9ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:19:15 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.9ms)
+  Rendered static_pages/home.html.haml within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, @person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165514613900'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165514613900'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:19:28 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513576860'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513576860'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.4ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (67.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:19:29 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.8ms)
+  Rendered static_pages/home.html.haml within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `reflect_on_association' for NilClass:Class):
+    7:       = render 'people', f: builder
+    8:     .control-group
+    9:       .controls= add_child_link 'Add Another Person', :person
+    10:     = new_child_field_template f, :person
+    11:     .form-actions
+    12:       = f.button :submit, 'Save', class: 'btn-primary'
+  app/helpers/application_helper.rb:33:in `new_child_field_template'
+  app/views/static_pages/home.html.haml:10:in `block in _app_views_static_pages_home_html_haml__4551562116121089369_70165513576860'
+  app/views/static_pages/home.html.haml:4:in `_app_views_static_pages_home_html_haml__4551562116121089369_70165513576860'
+
+
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered vendor/ruby/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.9ms)
+  Rendered static_pages/home.html.haml within layouts/application (36.7ms)
+  Rendered layouts/_stylesheets.html.haml (2.0ms)
+  Rendered layouts/_head.html.haml (4.0ms)
+  Rendered layouts/_header.html.haml (0.1ms)
+  Rendered layouts/_flashes.html.haml (0.2ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+  Rendered layouts/_javascripts.html.haml (18.9ms)
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jQuery.people.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /jQuery.people.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.hashgrid.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /jquery.hashgrid.js - 200 OK (7ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /respond.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2012-05-31 13:19:42 +0100
+Served asset /main.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_people.html.haml (2.7ms)
+  Rendered static_pages/home.html.haml within layouts/application (9.9ms)
+  Rendered layouts/_stylesheets.html.haml (1.9ms)
+  Rendered layouts/_head.html.haml (3.6ms)
+  Rendered layouts/_header.html.haml (0.1ms)
+  Rendered layouts/_flashes.html.haml (0.1ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+  Rendered layouts/_javascripts.html.haml (3.5ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.hashgrid.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /jquery.hashgrid.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jQuery.people.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /jQuery.people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-31 13:20:01 +0100
+Served asset /application.js - 304 Not Modified (0ms)

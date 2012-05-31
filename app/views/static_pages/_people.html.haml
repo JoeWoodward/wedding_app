@@ -1,0 +1,17 @@
+.person-fields
+  .controls
+    %label * Name
+    = f.text_field :first_name
+    = f.text_field :last_name
+  .controls
+    %label * Starter
+    = f.text_field :starter
+  .controls
+    %label * Main Course
+    = f.text_field :main_course
+  .controls
+    %label * Desert
+    = f.text_field :desert
+    %label.checkbox
+      = link_to 'Remove', '#', class: 'remove_child btn btn-mini btn-danger pointer'
+  = f.hidden_field :_destroy, class: :destroy

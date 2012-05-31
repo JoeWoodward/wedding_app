@@ -1,3 +1,10 @@
 - title 'Sam and Jamie\'s Wedding'
-article
-  %h1 
+%article
+  %h1 Place Your Order
+  = simple_form_for :order do |f|
+    = f.error_notification
+    = f.simple_fields_for :people, @people do |builder|
+      = render 'people', f: builder
+    .form-actions
+      = f.button :submit, 'Save', class: 'btn-primary'
+
