@@ -1,17 +1,62 @@
-%fieldset
-  = f.label :first_name, '* First Name'
-  = f.text_field :first_name
-  = f.text_field :last_name
-  %br
-  = f.label :starter, '* Starter'
-  = f.text_field :starter
-  %br
-  = f.label :main_course, '* Main Course'
-  = f.text_field :main_course
-  %br
-  = f.label :desert, '* Desert'
-  = f.text_field :desert
-  %br
-  %label.checkbox
-    = f.hidden_field :_destroy
-    %span#destroy.pointer Remove Person
+%fieldset.new-field
+  .order-container
+    = f.label :first_name, 'Full Name'
+    %br
+    = f.text_field :first_name, class: 'name-box'
+    = f.text_field :last_name, class: 'name-box'
+    %br
+    .divider
+    #starter.course
+      = f.label :starter, 'Starter', class: 'course-title'
+      %br
+      .choice
+        %h4 Duck Liver Parfait
+        %p Duck liver parfait with an orange and cranberry compote, and french bread
+        = f.radio_button :starter, 'Duck liver parfait, orange and cranberry compote, french bread', class: 'radio-button'
+      .choice
+        %h4 Home Smoked Mackerel
+        %p Smoked mackerel with garlic oil, caramelised red onions and olives
+        = f.radio_button :starter, 'Home smoked mackerel, garlic oil, caramelised red onions and olives', class: 'radio-button'
+      .choice
+        %h4 Tomato and Basil Soup
+        %p Tomato and basil soup with toasted croutons
+        = f.radio_button :starter, 'Tomato and basil soup, toasted croutons', class: 'radio-button'
+      .clear
+    .divider
+    #main_course.course
+      = f.label :main_course, 'Main Course', class: 'course-title'
+      %br
+      .choice
+        %h4 Roast Chicken
+        %p Roast chicken with roast patatoes and vegetables
+        = f.radio_button :main_course, 'Roast chicken, roast patatoes and vegetables', class: 'radio-button'
+      .choice
+        %h4 Fresh Egg Tagliatelle
+        %p Taliatelle with spinach, mushrooms and feta cheese
+        = f.radio_button :main_course, 'Fresh egg tagliatelle, spinach, mushrooms and feta cheese', class: 'radio-button'
+      .choice
+        %h4 Grilled Fillet of Salmon
+        %p Grilled salmon with chive mash, lemon saffron dressing
+        = f.radio_button :main_course, 'Grilled fillet of salmon, chive mash, lemon saffron dressing', class: 'radio-button'
+      .clear
+    .divider
+    #desert.course
+      = f.label :desert, 'Desert', class: 'course-title'
+      %br
+      .choice
+        %h4 Profritoroles
+        %p Profritoroles with chocolate sauce
+        = f.radio_button :desert, 'Profritoroles, chocolate sauce', class: 'radio-button'
+      .choice
+        %h4 Praline Cheese Cake
+        %p Praline cheese cake with toffee sauce
+        = f.radio_button :desert, 'Praline cheese cake, toffee sauce', class: 'radio-button'
+      .choice
+        %h4 Sticky Toffee Pudding
+        %p Sticky toffee pudding with ice cream
+        = f.radio_button :desert, 'Sticky toffee pudding, ice cream', class: 'radio-button'
+      .clear
+    .divider
+    %label.checkbox
+      = f.hidden_field :_destroy
+      %span#destroy.btn.pointer Remove This Person

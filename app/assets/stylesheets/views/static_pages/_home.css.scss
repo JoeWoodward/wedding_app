@@ -1,6 +1,241 @@
 /*	=STATIC PAGES / HOME STYLES
 ----------------------------------------------------------------------*/
 
-#welcome {
-  @include full;
+.pointer, .choice {
+  cursor: pointer;
+}
+
+.new-field {
+  opacity: 0;
+  height: 0;
+}
+
+fieldset {
+  padding: 0;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  color: #777;
+  background-color: #fdfdfd;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+  .order-container {
+    padding: 20px 0;
+
+    .divider {
+      height: 5px;
+      width: 96%;
+      background-color: white;
+      -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      margin: 0 2% 10px;
+      border: 1px solid #FDFDFD;
+    }
+
+    .checkbox {
+      padding-top: 10px;
+      display: block;
+    }
+
+    label {
+      font-size: 24px;
+    }
+
+    .name-box {
+      margin: 20px 0;
+      color: #777;
+      display: inline-block;
+      margin-left: 0;
+      -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s;
+      width: 30%;
+      height: 28px;
+      padding: 6px;
+      font-size: 20px;
+      line-height: 26px;
+      background-color: white;
+      border: 1px solid #f0f0f0;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      vertical-align: middle;
+
+      &:focus {
+        -webkit-box-shadow: 0 0 6px #f0f0f0;
+        -moz-box-shadow: 0 0 6px #f0f0f0;
+        box-shadow: 0 0 6px #f0f0f0;
+      }
+    }
+
+    .course {
+      width: 100%;
+
+      .choice {
+        width: 23%;
+        background-color: white;
+        margin: 20px 2%;
+        border: 1px solid #f0f0f0;
+        -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+        -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+        -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+        transition: border linear 0.2s, box-shadow linear 0.2s;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        float: left;
+        padding: 3%;
+        position: relative;
+
+        h1, h2, h3, h4, h5, h6 {
+          color: #666;
+        }
+
+        p {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+
+.btn, a.btn, input.button {
+  padding: 5px 10px;
+  background-image: linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
+  background-image: -o-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
+  background-image: -moz-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
+  background-image: -webkit-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
+  background-image: -ms-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(248,248,248)),color-stop(0, rgb(248,248,248)),color-stop(0.72, rgb(240,240,240)));
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #777;
+  font: normal 22px/26px Georgia, "Times New Roman", serif;
+  border: #f0f0f0;
+
+  &:hover {
+    background-image: linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
+    background-image: -o-linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
+    background-image: -moz-linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
+    background-image: -webkit-linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
+    background-image: -ms-linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.72, rgb(248,248,248)),color-stop(0.72, rgb(248,248,248)),color-stop(0, rgb(240,240,240)));
+    -webkit-box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+}
+
+.actions {
+  text-align: center;
+  padding: 20px 0;
+  border: 1px solid #f0f0f0;
+  color: #777;
+  background-color: #fdfdfd;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.field_with_errors {
+  color: #B94A48;
+  border-color: #B94A48;
+  display: inline;
+
+  input[type=text] {
+    border-color: #B94A48;
+  }
+
+  .choice {
+    border-color: #B94A48;
+  }
+}
+
+.place-order {
+  margin-top: 20px;
+  padding: 10px;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.error_messages {
+  color: #B94A48;
+  background-color: #fdfdfd;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #EED3D7;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(150, 50, 50, 0.2);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+  h5, h3, h4, h1, h2, h6 {
+    line-height: 40px;
+  }
 }

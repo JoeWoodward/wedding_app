@@ -11,16 +11,10 @@ body {
   #container {
     @include container;
     min-height: 100%;
-    margin-bottom: -$footer_height;
 
     article {
-      background-color: $highlight;
+      @include full;
     }
-  }
-
-  #footer-push {
-    height: $footer_height;
-    clear: both;
   }
 }
 
