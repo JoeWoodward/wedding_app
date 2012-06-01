@@ -59,7 +59,5 @@ module SamAndJamieWedding
     # Turn off timestamped migrations
     config.active_record.timestamped_migrations = false
 
-    # Rotate log files (10 files max at 20MB each)
-    config.logger = Logger.new(config.paths["log"].first, 10, 20 * 1000 * 1000)
   end
 end
