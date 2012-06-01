@@ -25,3 +25,6 @@
   .actions
     .done.btn
       = f.submit "Save Your Selections ", class: 'btn-reset'
+- content_for :javascripts do
+  :javascript
+    $.backstretch("/assets/background.jpg");

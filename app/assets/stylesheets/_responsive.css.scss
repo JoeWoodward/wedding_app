@@ -17,6 +17,17 @@
   body {
     @if($DEBUG == true) {
       @include debugmessage("Tablet media query fired", "yellow");
+      #container {
+        article {
+          fieldset {
+            .course {
+              .choice {
+                height: 150px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -39,6 +50,18 @@
   }
 
   #container {
+    article {
+      fieldset {
+        .course {
+          .choice {
+            height: 100px;
+            width: 80%;
+            display:block;
+            margin-left: 7%;
+          }
+        }
+      }
+    }
 
     /* All columns now stack on top of each other */
     .column {
@@ -69,6 +92,17 @@
     font-size: .8em;
     @if($DEBUG == true) {
       @include debugmessage("Small screen mobile media query fired", "red");
+    }
+    #container {
+      article {
+        fieldset {
+          .course {
+            .choice {
+              height: 110px;
+            }
+          }
+        }
+      }
     }
   }
 }

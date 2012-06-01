@@ -100,6 +100,7 @@ fieldset {
 
       .choice {
         width: 23%;
+        height: 120px;
         background-color: white;
         margin: 20px 2%;
         border: 1px solid #f0f0f0;
@@ -117,6 +118,12 @@ fieldset {
         float: left;
         padding: 3%;
         position: relative;
+
+        input[type=radio] {
+          position: absolute;
+          bottom: 20px;
+          left: 48%;
+        }
 
         h1, h2, h3, h4, h5, h6 {
           color: #666;
