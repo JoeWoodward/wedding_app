@@ -1,10 +1,12 @@
 - title 'Sam and Jamie\'s Wedding'
 
 %fieldset.place-order
-  %h2 Place Your Order
+  %h2 Please Place Your Order
+  %p * All orders must be placed by July 10th. If you do not, your lunch will be picked for you.
 = form_for @order do |f|
   - if @order.errors.any?
     .error_messages
+      %h3#errors Warning, some errors were found!
       - @order.errors.each do |field, msg|
         %h4= msg
   .hidden
@@ -14,11 +16,12 @@
       = render 'person_fields', f: builder
   %fieldset
     .order-container
-      = link_to_add_fields "Add Another Person", f, :people, 'btn'
+      = link_to_add_fields "Add Another Person <i class='icon-plus-sign'></i>".html_safe, f, :people, 'btn'
   %fieldset
     .order-container
       = f.label :password, 'Password'
       %br
       = f.password_field :password,  class: 'name-box'
   .actions
-    = f.submit 'Save Your Selections', class: :btn
+    .done.btn
+      = f.submit "Save Your Selections ", class: 'btn-reset'

@@ -43,7 +43,7 @@
     #desert.course
       = f.label :desert, 'Desert', class: 'course-title'
       %br
-      .choice
+      .choice(for="order_people_attributes_0_first_name")
         %h4 Profritoroles
         %p Profritoroles with chocolate sauce
         = f.radio_button :desert, 'Profritoroles, chocolate sauce', class: 'radio-button'
@@ -59,4 +59,6 @@
     .divider
     %label.checkbox
       = f.hidden_field :_destroy
-      %span#destroy.btn.pointer Remove This Person
+      %span#destroy.btn.pointer
+        Remove This Person
+        %i.icon-remove-sign

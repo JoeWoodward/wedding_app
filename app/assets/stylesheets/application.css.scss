@@ -15,7 +15,7 @@
 ----------------------------------------------------------------*/
 
 // Set this variable to 'true' to enable debugging features
-$DEBUG: true;
+$DEBUG: false;
 
 @import "global";
 @import "base";
@@ -35,3 +35,5 @@ $DEBUG: true;
 
 // Needs to come last so that .column gets higher specificity
 @import "responsive";
+
+@import "font-awesome";

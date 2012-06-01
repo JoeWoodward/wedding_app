@@ -1,4 +1,5 @@
 jQuery ->
+  $('.field_with_errors').parent('.choice').addClass('choice-error')
   animateNewField = () ->
     $('.new-field').animate({height: $('.order-container').height() + 40, opacity: 1}, 500, () ->
      $(this).removeClass('new-field').addClass('active').removeAttr('style'))

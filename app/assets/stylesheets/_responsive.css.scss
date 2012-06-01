@@ -47,6 +47,14 @@
       @include prefix(0);
       @include suffix(0);
     }
+
+    .btn {
+      width: 80%;
+    }
+
+    .name-box {
+      width: 80%;
+    }
   }
 }
 

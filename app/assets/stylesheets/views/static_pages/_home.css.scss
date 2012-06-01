@@ -15,7 +15,7 @@ fieldset {
   border: 1px solid #f0f0f0;
   text-align: center;
   color: #777;
-  background-color: #fdfdfd;
+  background-color: #fafafa;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -49,7 +49,7 @@ fieldset {
       -moz-border-radius: 3px;
       border-radius: 3px;
       margin: 0 2% 10px;
-      border: 1px solid #FDFDFD;
+      border: 1px solid #fafafa;
     }
 
     .checkbox {
@@ -126,12 +126,24 @@ fieldset {
           color: #aaa;
         }
       }
+
+      .choice-error {
+        border-color: #B94A48;
+      }
     }
   }
 }
 
+.btn-reset {
+  background-color: transparent;
+  border: none;
+  font: normal 22px/26px Georgia, "Times New Roman", serif;
+  color: #777;
+}
+
 .btn, a.btn, input.button {
   padding: 5px 10px;
+  width: 40%;
   background-image: linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
   background-image: -o-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
   background-image: -moz-linear-gradient(bottom, rgb(248,248,248) 0%, rgb(248,248,248) 0%, rgb(240,240,240) 72%);
@@ -151,8 +163,11 @@ fieldset {
   border-radius: 3px;
   text-decoration: none;
   color: #777;
+  text-align: center;
   font: normal 22px/26px Georgia, "Times New Roman", serif;
   border: #f0f0f0;
+  display: block;
+  margin: auto;
 
   &:hover {
     background-image: linear-gradient(bottom, rgb(248,248,248) 72%, rgb(248,248,248) 72%, rgb(240,240,240) 0%);
@@ -177,7 +192,7 @@ fieldset {
   padding: 20px 0;
   border: 1px solid #f0f0f0;
   color: #777;
-  background-color: #fdfdfd;
+  background-color: #fafafa;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -197,11 +212,7 @@ fieldset {
   border-color: #B94A48;
   display: inline;
 
-  input[type=text] {
-    border-color: #B94A48;
-  }
-
-  .choice {
+  input[type=text], input[type=password] {
     border-color: #B94A48;
   }
 }
@@ -218,11 +229,12 @@ fieldset {
 
 .error_messages {
   color: #B94A48;
-  background-color: #fdfdfd;
-  padding: 20px;
+  background-color: #fafafa;
+  padding: 0 20px 20px;
   margin-bottom: 20px;
+  text-align: center;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid #EED3D7;
+  border: 1px solid #B94A48;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 1px rgba(150, 50, 50, 0.2);
@@ -238,4 +250,36 @@ fieldset {
   h5, h3, h4, h1, h2, h6 {
     line-height: 40px;
   }
+
+  h4 {
+    text-decoration: underline;
+  }
+
+  h3 {
+    color: white;
+    background-color: #B94A48;
+    margin: 0 -20px;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 1px rgba(150, 50, 50, 0.4);
+  }
+}
+
+.done:after {
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  line-height: .9em;
+  content: "\f058";
 }
